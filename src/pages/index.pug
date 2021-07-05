@@ -1,0 +1,22 @@
+extends layouts/layout
+
+block variables
+  -const pageTitle ='Main'
+
+block content
+  main
+    .main-page
+      .inner
+        .casinos
+          .casinos-flag
+            .casinos-flag-left
+            .casinos-flag-right
+            .casinos-flag-text Popular
+          .casinos-text Microgaming
+          .casinos-hover
+            .casinos-hover-star
+              +icon('icon_star')
+            .casinos-hover-text Name of the game long long name
+            .casinos-hover-btn
+              a.casinos-hover-btn-play(href='/') Play
+              a.casinos-hover-btn-demo(href='/') demo

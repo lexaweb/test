@@ -1,0 +1,234 @@
+body {
+  .wrapper {
+    main {
+      .main-page {
+        padding-top: 50px;
+        padding-bottom: 70px;
+        .inner {
+          display: flex;
+          width: 100%;
+          justify-content: center;
+        }
+        .casinos {
+          position: relative;
+          z-index: 0;
+          width: 80%;
+          height: 80vh;
+          background: url('../img/img1.jpg') center/cover no-repeat;
+          border-radius: 3%;
+          cursor: pointer;
+          @include media-laptop {
+            width: 100%;
+          }
+          @include media-tablet-horizontal {
+            width: 100%;
+            height: 60vh;
+          }
+          @include media-mobile {
+            height: 40vh;
+          }
+          &-flag {
+            position: relative;
+            top: 40px;
+            width: 200px;
+            height: 50px;
+            overflow: hidden;
+            @include media-tablet-horizontal {
+              width: 150px;
+              height: 40px;
+            }
+            @include media-tablet {
+              top: 25px;
+            }
+            &-left,
+            &-right {
+              width: 80%;
+              height: 100%;
+              background: $yellow;
+            }
+            &-left {
+              float: left;
+              transform: skew(45deg);
+            }
+            &-right {
+              transform: skew(-45deg);
+            }
+            &-text {
+              position: absolute;
+              top: 50%;
+              left: 20px;
+              font: 700 24px/1 $font;
+              transform: translateY(-50%);
+              @include media-tablet-horizontal {
+                font-size: 22px;
+              }
+              @include media-tablet {
+                font-size: 20px;
+              }
+            }
+          }
+          &-text {
+            position: absolute;
+            right: 30px;
+            bottom: 70px;
+            color: $yellow;
+            font: 400 18px/1.2 $font;
+            padding: 10px 30px;
+            border: 2px solid $yellow;
+            border-radius: 10px;
+            @include media-tablet-horizontal {
+              font-size: 16px;
+              padding: 7px 25px;
+            }
+            @include media-tablet {
+              bottom: 50px;
+              font-size: 14px;
+              padding: 5px 20px;
+            }
+          }
+          &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: $black;
+            border-radius: 3%;
+            opacity: 0;
+            visibility: hidden;
+          }
+          &:hover {
+            .casinos-flag {
+              opacity: 0;
+              transition: 0.3s;
+              visibility: hidden;
+            }
+            .casinos-text {
+              opacity: 0;
+              transition: 0.3s;
+              visibility: hidden;
+            }
+            &::after {
+              opacity: 0.5;
+              visibility: visible;
+              transition: 0.3s;
+            }
+            .casinos-hover {
+              opacity: 1;
+              visibility: visible;
+              transition: 0.3s;
+            }
+          }
+          &-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            &-star {
+              position: absolute;
+              top: 40px;
+              right: 30px;
+              display: inline-block;
+              padding: 5px;
+              border: 2px solid $yellow;
+              border-radius: 10px;
+              @include media-tablet {
+                top: 25px;
+              }
+              @include media-mobile {
+                right: 20px;
+                padding: 2px;
+              }
+              &:hover {
+                background: $yellow;
+                transition: 0.3s;
+                svg {
+                  color: #fff;
+                  transition: 0.3s;
+                }
+              }
+              svg {
+                width: 50px;
+                height: 50px;
+                color: $yellow;
+                @include media-tablet {
+                  width: 40px;
+                  height: 40px;
+                }
+                @include media-mobile {
+                  width: 30px;
+                  height: 30px;
+                }
+              }
+            }
+            &-text {
+              width: 48%;
+              text-align: center;
+              font: 700 50px/1.2 $font;
+              color: $yellow;
+              margin-bottom: 60px;
+              @include media-tablet-horizontal {
+                width: 60%;
+                font-size: 48px;
+              }
+              @include media-tablet {
+                width: 70%;
+                font-size: 42px;
+                margin-bottom: 40px;
+              }
+              @include media-mobile {
+                width: 90%;
+                font-size: 32px;
+              }
+            }
+            &-btn {
+              display: flex;
+              justify-content: space-evenly;
+              &-play,
+              &-demo {
+                font: 700 26px/1.2 $font;
+                margin: 0 20px;
+                padding: 10px 50px;
+                background: $yellow;
+                border: 2px solid $yellow;
+                border-radius: 10px;
+                color: $black;
+                @include media-tablet-horizontal {
+                  padding: 8px 40px;
+                  font-size: 24px;
+                }
+                @include media-tablet {
+                  margin: 0 15px;
+                  padding: 5px 30px;
+                  font-size: 22px;
+                }
+                @include media-mobile {
+                  padding: 5px 25px;
+                  font-size: 20px;
+                }
+                &:hover {
+                  background: #ffeb80;
+                  transition: 0.3s;
+                  color: $black;
+                }
+              }
+              &-demo {
+                color: $yellow;
+                background: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
